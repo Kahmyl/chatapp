@@ -1,0 +1,12 @@
+{
+    "name": "kamil/chatapp",
+    "require": {
+        "php": "^7.4"
+    },
+    "authors": [
+        {
+            "name": "Kahmyl",
+            "email": "59609015+Kahmyl@users.noreply.github.com"
+        }
+    ]
+}
