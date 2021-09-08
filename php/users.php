@@ -7,7 +7,7 @@
     $query = mysqli_query($conn, $sql);
     $output = "";
     if(mysqli_num_rows($query) == 0){
-        $output .= "No users are available to chat";
+        $output .= "<div style='padding-left:15px;'>No users are available to chat</div>";
     }elseif(mysqli_num_rows($query) > 0){
         include_once "data.php";
     }
