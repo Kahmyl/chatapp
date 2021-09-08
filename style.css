@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Arial:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Trebuchet MS', sans-serif;
 }
 body{
   display: flex;
@@ -180,7 +180,7 @@ body{
 .users .search .text{
   font-size: 18px;
 }
-.users .search .george a{
+.users .search .george {
   padding-top: 8.7px;
   position: relative;
   z-index: 1;
@@ -195,8 +195,9 @@ body{
   border-radius: 0 5px 5px 0;
   transition: all 0.2s ease;
 }
-.users .search .george a i{
+.users .search .george  .fa{
   padding-top: 7.6px;
+  color: white;
 }
 .users .search .tailw{
   padding-top: 5px;
@@ -386,7 +387,7 @@ body{
   border-bottom-right-radius: 15px ;
   color: whitesmoke;
 }
-.typing-area textarea{
+.typing-area input{
   height: 45px;
   width: calc(100% - 58px);
   font-size: 16px;
@@ -396,9 +397,8 @@ body{
   border-radius: 5px 0 0 5px;
   background: darkgrey;
   color: whitesmoke;
- 
 }
-.typing-area textarea .input-field{
+.typing-area input .input-field{
   color: whitesmoke;
 }
 .typing-area button{
