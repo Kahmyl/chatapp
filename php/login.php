@@ -2,11 +2,10 @@
     ini_set('display_errors',0);
     session_start();
     include_once "config.php";
-    $username = mysqli_real_escape_string($conn, $_POST['input']);
     $email = mysqli_real_escape_string($conn, $_POST['input']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
-    if(!empty($email) OR !empty($username) && !empty($password)){
-        $sql = mysqli_query($conn, "SELECT * FROM users WHERE email OR username = '{$email}' OR '{$username}'");
+    if(!empty($email) && !empty($password)){
+        $sql = mysqli_query($conn, "SELECT * FROM users WHERE email  = '{$email}'");
         if(mysqli_num_rows($sql) > 0){
             $row = mysqli_fetch_assoc($sql);
             $user_pass = md5($password);
@@ -24,7 +23,7 @@
                 echo "Email or Password is Incorrect!";
             }
         }else{
-            echo "$email - This email not Exist!";
+            echo "$email - This email does not Exist!";
         }
     }else{
         echo "All input fields are required!";

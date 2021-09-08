@@ -7,6 +7,60 @@ ini_set('display_errors',0);
   }
 ?>
 <?php include_once "header.php"; ?>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+
+<style>
+    body {
+        background-color: #F5F5F5
+    }
+    
+    .mt-200 {
+        margin-top: 200px
+    }
+    
+    .dropbtn {
+        font-size: 20px !important;
+        color: white;
+        font-size: 14px;
+        border: none;
+        border-radius: 3px
+    }
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        padding-top: 7px;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 200px;
+        text-align:center;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1
+    }
+    
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block
+    }
+    
+    .dropdown-content a:hover {
+        background-color: darkgray;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block
+    }
+    
+    .dropdown:hover .dropbtn {
+        background-color: grey;
+    }
+</style>
 <body>
   <div class="wrapper">
     <section class="users">
@@ -23,7 +77,11 @@ ini_set('display_errors',0);
        
       </header>
       <div class="search">
-      <div class= "george"><a href="logout.php"><i class="fas fa-bars"></i></a></div>
+      <div class="dropdown"> <span class="dropbtn"><i class="fa fa-bars"></i></span>
+          <div class="dropdown-content">
+            <a href="">Profile</a> 
+            <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>">Logout</a> </div>
+      </div>
         <span class="tailw">Cruizers</span>
         <input type="text" placeholder=" search...">
         <button><i class="fas fa-search ze"></i></button>
@@ -38,3 +96,5 @@ ini_set('display_errors',0);
 
 </body>
 </html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
