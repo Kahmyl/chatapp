@@ -35,10 +35,7 @@
       </div>
       <form action="#" class="typing-area">
         <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $user_id; ?>" hidden>
-        <textarea id="emoticons" placeholder="Type your message here" style="  display: inline-flex; color: whitesmoke; height: 45px; width: calc(100% - 58px); font-size: 16px; padding: 0 13px; border: 1px solid darkgrey; outline: none; border-radius: 5px 0 0 5px; background: darkgrey; color: whitesmoke;">
-        
-        </textarea>
-        
+        <input type="text" name="message" class="input-field" placeholder="Type a message here..." autocomplete="off">
         <button><i class="fab fa-telegram-plane"></i></button>
         
       </form>
