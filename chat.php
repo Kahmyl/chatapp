@@ -7,9 +7,6 @@
   }
 ?>
 <?php include_once "header.php"; ?>
-<head>
-<script src="https://cdn.tiny.cloud/1/096xk1xfdf52orj1mhtxnj5ravwmyh80ok6l4k1jzklhpdrv/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-</head>
 <body>
   <div class="wrapper">
     <section class="chat-area">
@@ -42,16 +39,6 @@
     </section>
     
   </div>
-  <script>
-    tinymce.init({
-       selector: 'textarea',  // change this value according to your HTML
-       plugins: 'emoticons',
-       toolbar: 'emoticons',
-       emoticons_database_url: '/emojis.js'
-});
-  </script>
-  
-  <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
   <script src="javascript/chat.js"></script>
   </body>
 </html>
