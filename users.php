@@ -92,7 +92,7 @@ ini_set('display_errors',0);
     </section>
   </div>
 
-  <script src="javascript/users.js"></script>
+  <script src="public/javascript/users.js"></script>
 
 </body>
 </html>

@@ -30,8 +30,8 @@ ini_set('display_errors',0);
     </section>
   </div>
   
-  <script src="javascript/pass-show-hide.js"></script>
-  <script src="javascript/login.js"></script>
+  <script src="public/javascript/pass-show-hide.js"></script>
+  <script src="public/javascript/login.js"></script>
 
 </body>
 </html>

@@ -47,8 +47,8 @@
     </section>
   </div>
 
-  <script src="javascript/pass-show-hide.js"></script>
-  <script src="javascript/signup.js"></script>
+  <script src="public/javascript/pass-show-hide.js"></script>
+  <script src="public/javascript/signup.js"></script>
 
 </body>
 </html>
