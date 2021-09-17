@@ -1,4 +1,4 @@
-const url = "https://api.cloudinary.com/v1_1/kahmyl/image/upload";
+const url = "https://res.cloudinary.com/hpiddhw8y/image/upload/v1631916210/";
 const bol = document.querySelector("form");
 
 bol.addEventListener("submit", (e) => {
