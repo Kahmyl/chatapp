@@ -4,11 +4,11 @@ const bol = document.querySelector("form");
 bol.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const image = document.querySelector("[type=file]").image;
+  const files = document.querySelector("[type=file]").files;
   const formData = new FormData();
 
-  for (let i = 0; i < image.length; i++) {
-    let file = image[i];
+  for (let i = 0; i < files.length; i++) {
+    let file = files[i];
     formData.append("file", file);
     formData.append("upload_preset", "ml_default");
 
