@@ -4,7 +4,7 @@ const bol = document.querySelector("form");
 bol.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const files = document.querySelector("[type=file]").files;
+  const files = document.querySelector("[type=file]").image;
   const formData = new FormData();
 
   for (let i = 0; i < files.length; i++) {
