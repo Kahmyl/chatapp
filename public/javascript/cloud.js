@@ -17,11 +17,10 @@ bol.addEventListener("submit", (e) => {
       body: formData
     })
       .then((response) => {
-        return;
+        return response('uploaded');
       })
       .then((data) => {
         document.getElementById("data").innerHTML += data;
-        return;
       });
   }
 });
