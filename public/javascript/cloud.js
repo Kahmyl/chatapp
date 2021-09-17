@@ -1,7 +1,7 @@
 const url = "https://api.cloudinary.com/v1_1/kahmyl/image/upload";
-const form = document.querySelector("form");
+const bol = document.querySelector("form");
 
-form.addEventListener("submit", (e) => {
+bol.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const files = document.querySelector("[type=file]").files;
