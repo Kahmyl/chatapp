@@ -2,7 +2,6 @@ const url = "https://api.cloudinary.com/v1_1/hpiddhw8y/image/upload";
 const bol = document.querySelector("form");
 
 bol.addEventListener("submit", (e) => {
-  e.preventDefault();
 
   const files = document.querySelector("[type=file]").files;
   const formData = new FormData();
@@ -17,10 +16,12 @@ bol.addEventListener("submit", (e) => {
       body: formData
     })
       .then((response) => {
-        return response('uploaded');
+        return response.json();
       })
       .then((data) => {
-        document.getElementById("data").innerHTML += data;
+          const imgUrl = data.secure_url;
+          console.log(imgUrl);
       });
   }
 });
+

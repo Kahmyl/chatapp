@@ -37,20 +37,46 @@
         </div>
         <div class="field image">
           <label>Select Image</label>
-          <input type="file" name="image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
+          <input onchange="cloudImage()" type="file"  accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
+          <input type="hidden" id=data value="" name="image">
         </div>
         <div class="field button">
           <input type="submit" name="submit" value="Continue to Chat">
         </div>
       </form>
-      <p id="data"></p>
+      <!-- <img id="data" src="" alt="" width="120"> -->
       <div class="link">Already signed up? <a href="login.php">Login now</a></div>
     </section>
   </div>
 
   <script src="public/javascript/pass-show-hide.js"></script>
   <script src="public/javascript/signup.js"></script>
-  <script src="public/javascript/cloud.js"></script>
+  <script>
+    const url = "https://api.cloudinary.com/v1_1/hpiddhw8y/image/upload";
+    
+    function cloudImage() {
+      const files = document.querySelector("[type=file]").files;
+      const formData = new FormData();
+    
+      for (let i = 0; i < files.length; i++) {
+        let file = files[i];
+        formData.append("file", file);
+        formData.append("upload_preset", "ml_default");
+    
+        fetch(url, {
+          method: "POST",
+          body: formData
+        })
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            const imgUrl = data.secure_url;
+            document.getElementById("data").value = imgUrl
+          });
+      }
+    }
+  </script>
 
 </body>
 </html>
