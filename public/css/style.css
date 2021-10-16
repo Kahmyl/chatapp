@@ -1,11 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  font-family: 'Roboto' !important;
-}
 body{
   display: flex;
   align-items: center;
@@ -13,9 +5,10 @@ body{
   min-height: 100vh;
   background: #f7f7f7;
   padding: 0 10px;
+  font-family: 'Roboto' !important;
 }
 .wrapper{
-  background: #fff;
+  background: whitesmoke;
   max-width: 450px;
   width: 100%;
   border-radius: 16px;
@@ -26,6 +19,7 @@ body{
 /* Login & Signup Form CSS Start */
 .form{
   padding: 25px 30px;
+  
 }
 .form header{
   font-size: 25px;
@@ -381,12 +375,18 @@ body{
 .typing-area{
   padding: 18px 30px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   background: grey;
   border-bottom-left-radius: 15px ;
   border-bottom-right-radius: 15px ;
   color: whitesmoke;
 }
+/* .typing-area .fresh{
+  display: flex;
+  justify-content: space-between;
+} */
+
 .typing-area input{
   height: 45px;
   width: calc(100% - 58px);
@@ -404,6 +404,7 @@ body{
 .typing-area button{
   color:whitesmoke;
   width: 55px;
+  height: 45px;
   border: none;
   outline: none;
   background:rgba(0,0,0,0.3);
@@ -415,6 +416,13 @@ body{
   transition: all 0.3s ease;
   border: 0px solid rgba(0,0,0,0.3);
 }
+
+.typing-area span{
+   padding-right: 2px;
+   font-size: 25px;
+   cursor: pointer;
+}
+
 .typing-area button.active{
   opacity: 1;
   pointer-events: auto;

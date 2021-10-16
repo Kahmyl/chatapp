@@ -79,7 +79,7 @@ ini_set('display_errors',0);
       <div class="search">
       <div class="dropdown"> <span class="dropbtn"><i class="fa fa-bars"></i></span>
           <div class="dropdown-content">
-            <a href="">Profile</a> 
+            <a href="profile.php?id=<?php echo $row['user_id'];?>">Profile</a> 
             <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>">Logout</a> </div>
       </div>
         <span class="tailw">Cruizers</span>

@@ -2,13 +2,14 @@
     ini_set('display_errors',0);
     session_start();
     include_once "config.php";
+    $image = $_POST['imgUrl'];
     $fname = mysqli_real_escape_string($conn, $_POST['fname']);
     $lname = mysqli_real_escape_string($conn, $_POST['lname']);
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $image = mysqli_real_escape_string($conn, $_POST['image']);
+    // $image = mysqli_real_escape_string($conn, $_POST['imgUrl']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
-    if(!empty($fname) && !empty($lname) && !empty($username) && !empty($email) && !empty($password)){
+    if(!empty($fname) && !empty($lname) && !empty($username) && !empty($email) && !empty($password) && !empty($image)){
         if(filter_var($email, FILTER_VALIDATE_EMAIL)){
             $sql = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$email}'");
             if(mysqli_num_rows($sql) > 0){
@@ -36,6 +37,8 @@
             echo "$email is not a valid email!";
         }
     }else{
+        var_dump($_POST);
+        var_dump($_POST['json']);
         echo "All input fields are required!";
     }
 ?>

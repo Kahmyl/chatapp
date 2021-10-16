@@ -1,8 +1,7 @@
-const url = "https://api.cloudinary.com/v1_1/hpiddhw8y/image/upload";
-const bol = document.querySelector("form");
+const url = "https://api.cloudinary.com/v1_1/hpiddhw8y/image/upload"
+let imgUrl;
 
-bol.addEventListener("submit", (e) => {
-
+const cloudImage = async () => {
   const files = document.querySelector("[type=file]").files;
   const formData = new FormData();
 
@@ -11,17 +10,29 @@ bol.addEventListener("submit", (e) => {
     formData.append("file", file);
     formData.append("upload_preset", "ml_default");
 
-    fetch(url, {
+    const res = await fetch(url, {
       method: "POST",
       body: formData
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-          const imgUrl = data.secure_url;
-          console.log(imgUrl);
-      });
-  }
-});
+    });
 
+    const data = await res.json();
+    imgUrl = await data.secure_url;
+    console.log(imgUrl);
+  }
+}
+
+const submitImage = async (e) => {
+  e.preventDefault();
+  console.log("calling")
+  console.log(imgUrl);
+  const pdata = new FormData();
+  pdata.append("json", JSON.stringify(imgUrl));
+
+  const res = await fetch('php/signup.php',{
+    method: "POST",
+    body: pdata
+  });
+
+  const data = await res.json();
+  console.log(data)
+}

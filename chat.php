@@ -27,18 +27,43 @@
           <p><?php echo $row['status']; ?></p>
         </div>
       </header>
-      <div class="chat-box">
+      <div id="chat-box" class="chat-box">
 
       </div>
       <form action="#" class="typing-area">
         <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $user_id; ?>" hidden>
-        <input type="text" name="message" class="input-field" placeholder="Type a message here..." autocomplete="off">
+        <span id="emoji-button">😃</span>
+        <input type="text" name="message" class="input-field" id="input-field" placeholder="Type a message here..." autocomplete="off">
         <button><i class="fab fa-telegram-plane"></i></button>
-        
       </form>
     </section>
     
   </div>
-  <script src="javascript/chat.js"></script>
+  <script src="./public/javascript/chat.js"></script>
+  <script src="./public/javascript/emoji-button-3.1.1.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var picker = new EmojiButton({
+          autoFocusSearch: false,
+          // autoHide: false,
+          showSearch: false,
+          position: "top-start",
+          theme: "dark",
+          // style:"twemoji",
+          // rootElement:"chat-box"
+        });
+        var button = document.querySelector("#emoji-button");
+
+        button.addEventListener("click", () => {
+          picker.togglePicker(button);
+        });
+
+        picker.on("emoji", (emoji) => {
+          document.querySelector("#input-field").value += emoji;
+          document.getElementById("input-field").focus();
+        });
+      });
+  </script>
   </body>
 </html>
