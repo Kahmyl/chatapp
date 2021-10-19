@@ -35,6 +35,7 @@
         <span id="emoji-button">😃</span>
         <input type="text" name="message" class="input-field" id="input-field" placeholder="Type a message here..." autocomplete="off">
         <button><i class="fab fa-telegram-plane"></i></button>
+        <?php include_once "public/images/folder-svgrepo-com.svg";?>
       </form>
     </section>
     
